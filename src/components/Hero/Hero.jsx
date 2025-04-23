@@ -145,18 +145,27 @@ const Hero = () => {
 
   return (
     <HeroSection>
-      <AnimatePresence initial={false}>
+      <AnimatePresence mode="crossfade">
         <Slide
           key={currentSlide}
           bgImage={slides[currentSlide]}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{
-            opacity: { duration: 1, ease: "easeInOut" }
+          animate={{ 
+            opacity: 1,
+            transition: {
+              duration: 2,
+              ease: [0.4, 0, 0.2, 1] // ease-out personalizado
+            }
+          }}
+          exit={{ 
+            opacity: 0,
+            transition: {
+              duration: 2,
+              ease: [0.4, 0, 0.2, 1]
+            }
           }}
         />
-      </AnimatePresence>
+    </AnimatePresence>
       
       <HeroContent>
         <Title
