@@ -1,0 +1,208 @@
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const HeroSection = styled.section`
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+`;
+
+const Slide = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url(${props => props.bgImage}) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  will-change: opacity;
+`;
+
+const HeroContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  color: white;
+`;
+
+const Title = styled(motion.h1)`
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const Subtitle = styled(motion.p)`
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const CTAButton = styled(motion.a)`
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-bottom: 3rem;
+  
+  &:hover {
+    background-color: #0052a3;
+  }
+`;
+
+const LogoButton = styled(motion.button)`
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  
+  img {
+    height: 80px;
+    width: auto;
+    
+    @media (max-width: 768px) {
+      height: 60px;
+    }
+  }
+`;
+
+const ScrollIndicator = styled(motion.div)`
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 2;
+  padding: 1rem;
+  
+  &::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(45deg);
+  }
+`;
+
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    '/assets/foto1.png',
+    '/assets/foto2.jpg',
+    '/assets/foto3.jpg',
+    '/assets/foto4.jpg',
+    '/assets/foto5.jpg',
+    '/assets/foto6.jpg',
+    '/assets/foto7.png',
+    '/assets/foto8.jpg',
+    '/assets/foto9.jpg',
+    '/assets/foto10.png'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById('sobre');
+    nextSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <HeroSection>
+      <AnimatePresence initial={false}>
+        <Slide
+          key={currentSlide}
+          bgImage={slides[currentSlide]}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            opacity: { duration: 1, ease: "easeInOut" }
+          }}
+        />
+      </AnimatePresence>
+      
+      <HeroContent>
+        <Title
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Programa de Incentivo à Inovação (PII)
+        </Title>
+        <Subtitle
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Impulsionando a inovação em Florianópolis com incentivos fiscais e apoio dos Arranjos Promotores de Inovação (APIs)
+        </Subtitle>
+        <CTAButton
+          href="#sobre"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Saiba Mais
+        </CTAButton>
+        
+        <LogoButton
+          onClick={scrollToTop}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <img src="/assets/LOGOPMF.png" alt="Prefeitura Municipal de Florianópolis" />
+        </LogoButton>
+      </HeroContent>
+
+      <ScrollIndicator
+        onClick={scrollToNextSection}
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+      />
+    </HeroSection>
+  );
+};
+
+export default Hero;
