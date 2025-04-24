@@ -128,26 +128,36 @@ const LogoButton = styled(motion.button)`
 
 const ScrollIndicator = styled(motion.div)`
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  z-index: 2;
-  padding: 1rem;
+  z-index: 10;
   
   @media (max-width: 768px) {
-    bottom: 1rem;
+    bottom: 1.5rem;
   }
   
   &::before {
     content: '';
-    display: block;
     width: 20px;
     height: 20px;
     border-right: 3px solid white;
     border-bottom: 3px solid white;
     transform: rotate(45deg);
     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+
+    @media (max-width: 768px) {
+      width: 15px;
+      height: 15px;
+      border-width: 2px;
+    }
   }
 `;
 
@@ -167,7 +177,6 @@ const Hero = () => {
     '/assets/foto10.png'
   ];
 
-  // Pré-carregamento das imagens
   useEffect(() => {
     slides.forEach(src => {
       const img = new Image();
@@ -255,8 +264,15 @@ const Hero = () => {
 
       <ScrollIndicator
         onClick={scrollToNextSection}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: 1,
+          y: [0, 10, 0]
+        }}
+        transition={{ 
+          opacity: { duration: 0.3 },
+          y: { duration: 1.5, repeat: Infinity }
+        }}
       />
     </HeroSection>
   );
