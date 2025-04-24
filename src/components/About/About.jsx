@@ -1,4 +1,3 @@
-// src/components/About/About.jsx
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
