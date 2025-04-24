@@ -116,7 +116,7 @@ const Header = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="/assets/logoPII.png" alt="Prefeitura Municipal de Florianópolis" />
+          <img src="/assets/inovacao.png" alt="Prefeitura Municipal de Florianópolis" />
         </LogoButton>
 
         <MenuButton onClick={toggleMenu}>
