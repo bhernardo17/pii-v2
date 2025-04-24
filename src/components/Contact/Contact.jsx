@@ -274,6 +274,9 @@ const Contact = () => {
               <SocialLinks>
                 <SocialLink href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" target="_blank" rel="noopener noreferrer">
                   <FaInstagram />
+                  <InfoText>
+                    <h6>Instagram Rede Inovação</h6>
+                  </InfoText>
                 </SocialLink>
               </SocialLinks>
 
