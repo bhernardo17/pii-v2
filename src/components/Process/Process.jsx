@@ -16,12 +16,20 @@ const ProcessSection = styled.section`
   padding: 100px 0;
   background-color: var(--bg-primary);
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const Title = styled(motion.h2)`
@@ -32,6 +40,8 @@ const Title = styled(motion.h2)`
   
   @media (max-width: 768px) {
     font-size: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
   }
 `;
 
@@ -39,7 +49,6 @@ const Timeline = styled.div`
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  
   
   &::after {
     content: '';
@@ -53,6 +62,8 @@ const Timeline = styled.div`
     
     @media (max-width: 768px) {
       left: 31px;
+      height: 100%;
+      min-height: calc(100% - 60px);
     }
   }
 `;
@@ -63,12 +74,12 @@ const TimelineItem = styled(motion.div)`
   width: 50%;
   left: ${props => props.position === 'left' ? '0' : '50%'};
   
-  
   @media (max-width: 768px) {
-    width: 100%;
+    width: 85%;
     padding-left: 70px;
-    padding-right: 25px;
+    padding-right: 15px;
     left: 0;
+    margin-bottom: 30px;
   }
 `;
 
@@ -105,7 +116,13 @@ const TimelineContent = styled(motion.div)`
     @media (max-width: 768px) {
       left: -17px;
       transform: rotate(-135deg);
+      width: 20px;
+      height: 20px;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
   }
 `;
 
@@ -125,9 +142,11 @@ const IconCircle = styled.div`
   color: white;
   font-size: 1.5rem;
   
-  
   @media (max-width: 768px) {
     left: 7px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 `;
 
@@ -135,12 +154,20 @@ const StepTitle = styled.h3`
   font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StepDescription = styled.p`
   font-size: 1.1rem;
   color: var(--text-secondary);
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const EvaluationDetails = styled(motion.div)`
@@ -150,6 +177,10 @@ const EvaluationDetails = styled(motion.div)`
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   
+  @media (max-width: 768px) {
+    margin: 3rem 1rem 0 1rem;
+    padding: 1.5rem;
+  }
 `;
 
 const EvaluationTitle = styled.h3`
@@ -157,6 +188,11 @@ const EvaluationTitle = styled.h3`
   color: var(--primary);
   text-align: center;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 const CommitteesGrid = styled.div`
@@ -167,6 +203,7 @@ const CommitteesGrid = styled.div`
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
@@ -180,7 +217,12 @@ const Card = styled(motion.div)`
   &:hover {
     transform: scale(1.02);
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
 `;
+
 const CardTitle = styled.h4`
   display: flex;
   align-items: center;
@@ -192,12 +234,24 @@ const CardTitle = styled.h4`
   svg {
     font-size: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    
+    svg {
+      font-size: 1.3rem;
+    }
+  }
 `;
 
 const CardDescription = styled.p`
   font-size: 1.1rem;
   color: var(--text-secondary);
   line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const SubTitle = styled(motion.h3)`
@@ -205,6 +259,11 @@ const SubTitle = styled(motion.h3)`
   color: var(--primary);
   text-align: center;
   margin: 2rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
 `;
 
 const CriteriaGrid = styled.div`
@@ -213,6 +272,10 @@ const CriteriaGrid = styled.div`
   gap: 1.5rem;
   margin-top: 2rem;
   
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 `;
 
 const Process = () => {
@@ -362,7 +425,6 @@ const Process = () => {
                   por Portaria. Avaliam os projetos conforme critérios estabelecidos.
                 </CardDescription>
               </Card>
-
               <Card variants={itemVariants}>
                 <CardTitle>
                   <FaCheckCircle />

@@ -204,9 +204,8 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Aqui você implementaria a lógica de envio do formulário
       console.log(data);
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulação de envio
+      await new Promise(resolve => setTimeout(resolve, 1000)); 
       alert('Mensagem enviada com sucesso!');
     } catch (error) {
       alert('Erro ao enviar mensagem. Tente novamente.');
@@ -277,7 +276,7 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <FaMapMarkerAlt /> Ver no Google Maps
+                      <FaMapMarkerAlt />
                     </MapLink>
                   </InfoText>
                 </InfoItem>
@@ -297,7 +296,7 @@ const Contact = () => {
                 <InfoItem>
                   <FaInstagram />
                   <InfoText>
-                    <h3>Instagram Rede Inovação</h3>
+                    <h3>Rede Inovação</h3>
                     <p>
                       <a 
                         href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" 
