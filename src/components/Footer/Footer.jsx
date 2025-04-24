@@ -94,13 +94,10 @@ const Footer = () => {
               Programa de Incentivo à Inovação: transformando ideias em soluções inovadoras para o futuro.
             </FooterText>
             <SocialLinks>
-              <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
+              <SocialIcon href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" target="_blank" rel="noopener noreferrer">
                 <FaInstagram />
               </SocialIcon>
-              <SocialIcon href="#" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
-              </SocialIcon>
-              <SocialIcon href="mailto:contato@pii.floripa.br">
+              <SocialIcon href="mailto:pii.supcti.pmf@gmail.com">
                 <FaEnvelope />
               </SocialIcon>
             </SocialLinks>
@@ -110,16 +107,16 @@ const Footer = () => {
             <h4>Links Rápidos</h4>
             <FooterLinks>
               <FooterLink>
-                <a href="#about">Sobre</a>
+                <a href="#sobre">Sobre</a>
               </FooterLink>
               <FooterLink>
-                <a href="#benefits">Benefícios</a>
+                <a href="#beneficios">Benefícios</a>
               </FooterLink>
               <FooterLink>
-                <a href="#participation">Participação</a>
+                <a href="#participacao">Participação</a>
               </FooterLink>
               <FooterLink>
-                <a href="#process">Processo</a>
+                <a href="#processo">Processo</a>
               </FooterLink>
             </FooterLinks>
           </FooterColumn>
@@ -130,7 +127,7 @@ const Footer = () => {
               Florianópolis, SC
             </FooterText>
             <FooterText>
-              contato@pii.floripa.br
+              pii.supcti.pmf@gmail.com
             </FooterText>
           </FooterColumn>
         </FooterContent>

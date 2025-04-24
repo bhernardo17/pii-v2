@@ -267,16 +267,13 @@ const Contact = () => {
                 <FaEnvelope />
                 <InfoText>
                   <h3>E-mail</h3>
-                  <a href="mailto:contato@pii.floripa.br">contato@pii.floripa.br</a>
+                  <a href="mailto:pii.supcti.pmf@gmail.com">pii.supcti.pmf@gmail.com</a>
                 </InfoText>
               </InfoItem>
 
               <SocialLinks>
-                <SocialLink href="#" target="_blank" rel="noopener noreferrer">
+                <SocialLink href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" target="_blank" rel="noopener noreferrer">
                   <FaInstagram />
-                </SocialLink>
-                <SocialLink href="#" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin />
                 </SocialLink>
               </SocialLinks>
 
