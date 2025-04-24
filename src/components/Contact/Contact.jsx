@@ -1,8 +1,7 @@
-// src/components/Contact/Contact.jsx
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 
 const ContactSection = styled.section`
@@ -51,12 +50,17 @@ const ContactInfo = styled(motion.div)`
   }
 `;
 
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+`;
 
 const InfoItem = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.5rem;
   
   svg {
     color: var(--primary);
@@ -67,15 +71,21 @@ const InfoItem = styled.div`
 
 const InfoText = styled.div`
   h3 {
-    font-size: 1.2rem;
-    color: var(--text-primary);
+    color: var(--primary);
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
   }
   
-  p, a {
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  a {
     color: var(--text-secondary);
     text-decoration: none;
-    line-height: 1.6;
+    transition: color 0.3s ease;
     
     &:hover {
       color: var(--primary);
@@ -83,19 +93,17 @@ const InfoText = styled.div`
   }
 `;
 
-const SocialLinks = styled.div`
+const MapLink = styled.a`
+  color: var(--primary);
+  text-decoration: none;
   display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-`;
-
-const SocialLink = styled.a`
-  color: var(--text-secondary);
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
   
   &:hover {
-    color: var(--primary);
+    text-decoration: underline;
   }
 `;
 
@@ -128,8 +136,8 @@ const Input = styled.input`
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
-  color: var(--text-primary); // Adicionando cor do texto
-  background-color: white; // Garantindo fundo branco
+  color: var(--text-primary);
+  background-color: white;
   
   &:focus {
     outline: none;
@@ -149,8 +157,8 @@ const TextArea = styled.textarea`
   font-size: 1rem;
   min-height: 150px;
   resize: vertical;
-  color: var(--text-primary); // Adicionando cor do texto
-  background-color: white; // Garantindo fundo branco
+  color: var(--text-primary);
+  background-color: white;
   
   &:focus {
     outline: none;
@@ -244,44 +252,64 @@ const Contact = () => {
 
           <ContactGrid>
             <ContactInfo variants={itemVariants}>
-            <motion.img
+              <motion.img
                 src="/assets/faleConosco.png"
                 alt="Ilustração de contato"
                 style={{ 
                   width: '280px',
-                  marginTop: '2rem'
+                  marginBottom: '2rem'
                 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               />
-              <InfoItem>
-                <FaMapMarkerAlt />
-                <InfoText>
-                  <h3>Endereço</h3>
-                  <p>Avenida Rio Branco, 611</p>
-                </InfoText>
-              </InfoItem>
+              
+              <InfoContainer>
+                <InfoItem>
+                  <FaMapMarkerAlt />
+                  <InfoText>
+                    <h3>Endereço</h3>
+                    <p>Avenida Rio Branco, 611</p>
+                    <p>Centro - Florianópolis/SC</p>
+                    <p>CEP: 88010-030</p>
+                    <MapLink 
+                      href="https://www.google.com/maps/place/Secretaria+Municipal+de+Turismo,+Tecnologia+e+Desenvolvimento+Econômico/@-27.5915113,-48.5522338,17z/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaMapMarkerAlt /> Ver no Google Maps
+                    </MapLink>
+                  </InfoText>
+                </InfoItem>
 
-              <InfoItem>
-                <FaEnvelope />
-                <InfoText>
-                  <h3>E-mail</h3>
-                  <a href="mailto:pii.supcti.pmf@gmail.com">pii.supcti.pmf@gmail.com</a>
-                </InfoText>
-              </InfoItem>
+                <InfoItem>
+                  <FaEnvelope />
+                  <InfoText>
+                    <h3>E-mail</h3>
+                    <p>
+                      <a href="mailto:pii.supcti.pmf@gmail.com">
+                        pii.supcti.pmf@gmail.com
+                      </a>
+                    </p>
+                  </InfoText>
+                </InfoItem>
 
-              <SocialLinks>
-                <SocialLink href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" target="_blank" rel="noopener noreferrer">
+                <InfoItem>
                   <FaInstagram />
                   <InfoText>
-                    <h6>Instagram Rede Inovação</h6>
+                    <h3>Instagram Rede Inovação</h3>
+                    <p>
+                      <a 
+                        href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        @rededeinovacaofloripa
+                      </a>
+                    </p>
                   </InfoText>
-                </SocialLink>
-              </SocialLinks>
-
-            
-              
+                </InfoItem>
+              </InfoContainer>
             </ContactInfo>
 
             <ContactForm

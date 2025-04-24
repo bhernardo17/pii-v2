@@ -41,7 +41,7 @@ const Title = styled(motion.h1)`
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 4.5);
   
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -52,7 +52,7 @@ const Subtitle = styled(motion.p)`
   font-size: 1.5rem;
   margin-bottom: 3rem;
   max-width: 800px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 4.5);
   
   @media (max-width: 768px) {
     font-size: 1.25rem;
@@ -78,8 +78,14 @@ const CTAButton = styled(motion.a)`
 const LogoButton = styled(motion.button)`
   background: none;
   border: none;
-  padding: 0;
+  padding: 10px;
   cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
   
   img {
     height: 80px;
@@ -201,7 +207,7 @@ const Hero = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img src="/assets/LOGOPMF.png" alt="Prefeitura Municipal de Florianópolis" />
+          <img src="/assets/logobranco.png" alt="Prefeitura Municipal de Florianópolis" />
         </LogoButton>
       </HeroContent>
 
