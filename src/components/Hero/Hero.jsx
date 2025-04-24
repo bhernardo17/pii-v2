@@ -9,6 +9,11 @@ const HeroSection = styled.section`
   position: relative;
   padding: 80px 0;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+    min-height: 100svh;
+  }
 `;
 
 const Slide = styled(motion.div)`
@@ -22,6 +27,11 @@ const Slide = styled(motion.div)`
   background-size: cover;
   background-attachment: fixed;
   will-change: opacity;
+
+  @media (max-width: 768px) {
+    background-attachment: scroll;
+    background-position: center;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -35,16 +45,24 @@ const HeroContent = styled.div`
   position: relative;
   z-index: 2;
   color: white;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+    justify-content: center;
+    min-height: calc(100vh - 120px);
+  }
 `;
 
 const Title = styled(motion.h1)`
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 4.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -52,10 +70,12 @@ const Subtitle = styled(motion.p)`
   font-size: 1.5rem;
   margin-bottom: 3rem;
   max-width: 800px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 4.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   
   @media (max-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -70,6 +90,12 @@ const CTAButton = styled(motion.a)`
   transition: background-color 0.3s ease;
   margin-bottom: 3rem;
   
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+  
   &:hover {
     background-color: #0052a3;
   }
@@ -82,6 +108,8 @@ const LogoButton = styled(motion.button)`
   cursor: pointer;
   opacity: 0.9;
   transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 3;
   
   &:hover {
     opacity: 1;
@@ -90,9 +118,10 @@ const LogoButton = styled(motion.button)`
   img {
     height: 80px;
     width: auto;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
     
     @media (max-width: 768px) {
-      height: 60px;
+      height: 50px;
     }
   }
 `;
@@ -106,6 +135,10 @@ const ScrollIndicator = styled(motion.div)`
   z-index: 2;
   padding: 1rem;
   
+  @media (max-width: 768px) {
+    bottom: 1rem;
+  }
+  
   &::before {
     content: '';
     display: block;
@@ -114,6 +147,7 @@ const ScrollIndicator = styled(motion.div)`
     border-right: 3px solid white;
     border-bottom: 3px solid white;
     transform: rotate(45deg);
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
   }
 `;
 
@@ -132,6 +166,14 @@ const Hero = () => {
     '/assets/foto9.jpg',
     '/assets/foto10.png'
   ];
+
+  // Pré-carregamento das imagens
+  useEffect(() => {
+    slides.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -160,7 +202,7 @@ const Hero = () => {
             opacity: 1,
             transition: {
               duration: 2,
-              ease: [0.4, 0, 0.2, 1] 
+              ease: [0.4, 0, 0.2, 1]
             }
           }}
           exit={{ 
@@ -171,7 +213,7 @@ const Hero = () => {
             }
           }}
         />
-    </AnimatePresence>
+      </AnimatePresence>
       
       <HeroContent>
         <Title
