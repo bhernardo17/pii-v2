@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaMapMarkerAlt, FaEnvelope, FaInstagram, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
+import { sendEmail } from '../../config/email';
 
 const ContactSection = styled.section`
   padding: 100px 0;
@@ -199,16 +200,56 @@ const SubmitButton = styled(motion.button)`
   }
 `;
 
+const Alert = styled(motion.div)`
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  ${({ type }) => type === 'success' ? `
+    background-color: #4CAF50;
+    color: white;
+  ` : `
+    background-color: #f44336;
+    color: white;
+  `}
+`;
+
 const Contact = () => {
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (type, message) => {
+    setAlert({ type, message });
+    setTimeout(() => setAlert(null), 5000);
+  };
 
   const onSubmit = async (data) => {
     try {
-      console.log(data);
-      await new Promise(resolve => setTimeout(resolve, 1000)); 
-      alert('Mensagem enviada com sucesso!');
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message
+      };
+
+      const result = await sendEmail(templateParams);
+      
+      if (result.success) {
+        showAlert('success', 'Mensagem enviada com sucesso!');
+        reset();
+      } else {
+        throw new Error('Erro ao enviar mensagem');
+      }
     } catch (error) {
-      alert('Erro ao enviar mensagem. Tente novamente.');
+      console.error('Erro ao enviar e-mail:', error);
+      showAlert('error', 'Erro ao enviar mensagem. Tente novamente.');
     }
   };
 
@@ -320,6 +361,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   {...register("name", { required: "Nome é obrigatório" })}
+                  disabled={isSubmitting}
                 />
                 {errors.name && (
                   <ErrorMessage>{errors.name.message}</ErrorMessage>
@@ -337,6 +379,7 @@ const Contact = () => {
                       message: "E-mail inválido"
                     }
                   })}
+                  disabled={isSubmitting}
                 />
                 {errors.email && (
                   <ErrorMessage>{errors.email.message}</ErrorMessage>
@@ -348,6 +391,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   {...register("subject", { required: "Assunto é obrigatório" })}
+                  disabled={isSubmitting}
                 />
                 {errors.subject && (
                   <ErrorMessage>{errors.subject.message}</ErrorMessage>
@@ -358,6 +402,7 @@ const Contact = () => {
                 <Label>Mensagem</Label>
                 <TextArea
                   {...register("message", { required: "Mensagem é obrigatória" })}
+                  disabled={isSubmitting}
                 />
                 {errors.message && (
                   <ErrorMessage>{errors.message.message}</ErrorMessage>
@@ -376,6 +421,20 @@ const Contact = () => {
           </ContactGrid>
         </motion.div>
       </Container>
+
+      <AnimatePresence>
+        {alert && (
+          <Alert
+            type={alert.type}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+          >
+            {alert.type === 'success' ? <FaCheckCircle /> : <FaExclamationCircle />}
+            {alert.message}
+          </Alert>
+        )}
+      </AnimatePresence>
     </ContactSection>
   );
 };

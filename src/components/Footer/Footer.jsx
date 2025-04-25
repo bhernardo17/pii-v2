@@ -80,6 +80,11 @@ const Copyright = styled.div`
   color: var(--text-secondary);
 `;
 
+const LogoPMF = styled.img`
+  width: 300px;
+  margin-top: 15px;
+`;
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -128,6 +133,10 @@ const Footer = () => {
             <FooterText>
               pii.supcti.pmf@gmail.com
             </FooterText>
+            <LogoPMF 
+              src="/assets/LOGOPMF.png" 
+              alt="Logo Prefeitura Municipal de Florianópolis"
+            />
           </FooterColumn>
         </FooterContent>
 
