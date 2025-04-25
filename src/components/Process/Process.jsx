@@ -74,10 +74,10 @@ const TimelineItem = styled(motion.div)`
   
   @media (max-width: 768px) {
     width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
+    padding-left: 50px;
+    padding-right: 15px;
     left: 0;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -88,27 +88,10 @@ const TimelineContent = styled(motion.div)`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   
-  &::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: ${props => props.position === 'left' ? '-17px' : 'auto'};
-    left: ${props => props.position === 'right' ? '-17px' : 'auto'};
-    background: white;
-    border-top: 2px solid var(--primary);
-    border-right: 2px solid var(--primary);
-    top: 22px;
-    transform: ${props => props.position === 'left' ? 'rotate(45deg)' : 'rotate(-135deg)'};
-    
-    @media (max-width: 768px) {
-      left: -17px;
-      transform: rotate(-135deg);
-    }
-  }
-
   @media (max-width: 768px) {
     padding: 1.5rem;
+    padding-left: 3rem;
+    margin-left: 15px;
   }
 `;
 
@@ -129,10 +112,12 @@ const IconCircle = styled.div`
   font-size: 1.5rem;
   
   @media (max-width: 768px) {
-    left: 7px;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+    left: -15px;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 `;
 
@@ -140,11 +125,11 @@ const StepTitle = styled.h3`
   font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1rem;
-  padding-top: 0.5rem;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
-    margin-top: 0.5rem;
+    margin-top: 0;
+    padding-top: 0;
   }
 `;
 
