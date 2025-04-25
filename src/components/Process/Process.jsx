@@ -28,7 +28,7 @@ const Container = styled.div`
   padding: 0 1rem;
 
   @media (max-width: 768px) {
-    padding: 0;
+    padding: 0 15px;
   }
 `;
 
@@ -62,8 +62,6 @@ const Timeline = styled.div`
     
     @media (max-width: 768px) {
       left: 31px;
-      height: 100%;
-      min-height: calc(100% - 60px);
     }
   }
 `;
@@ -75,11 +73,11 @@ const TimelineItem = styled(motion.div)`
   left: ${props => props.position === 'left' ? '0' : '50%'};
   
   @media (max-width: 768px) {
-    width: 85%;
+    width: 100%;
     padding-left: 70px;
-    padding-right: 15px;
+    padding-right: 25px;
     left: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -89,16 +87,6 @@ const TimelineContent = styled(motion.div)`
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.02);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
   
   &::after {
     content: '';
@@ -116,8 +104,6 @@ const TimelineContent = styled(motion.div)`
     @media (max-width: 768px) {
       left: -17px;
       transform: rotate(-135deg);
-      width: 20px;
-      height: 20px;
     }
   }
 
@@ -154,9 +140,11 @@ const StepTitle = styled.h3`
   font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1rem;
+  padding-top: 0.5rem;
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
+    margin-top: 0.5rem;
   }
 `;
 
