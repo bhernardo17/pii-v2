@@ -109,21 +109,11 @@ const Projects = () => {
 
   const projectsData = [
     {
-      title: "Let's Hike",
-      logo: "/assets/logo_projeto/lets-hike-logo.png",
+      title: "Altrum Medical",
+      logo: "/assets/logo_projeto/Altrum.png",
       links: {
-        website: "https://www.letshike.com.br/",
-        instagram: "https://www.instagram.com/letshike.app",
-        linkedin: "https://www.linkedin.com/company/let´s-hike-app/about/"
-      }
-    },
-    {
-      title: "SANAPP",
-      logo: "/assets/logo_projeto/Sanapp.png",
-      links: {
-        website: "https://geosanapp.com.br/",
-        instagram: "https://www.instagram.com/",
-        linkedin: "https://www.linkedin.com/company/sanapp-gestão-inteligente-de-ativos-de-saneamento/"
+        instagram: "https://www.instagram.com/altrummedical",
+        linkedin: "https://www.linkedin.com/company/altrum-medical/"
       }
     },
     {
@@ -136,11 +126,12 @@ const Projects = () => {
       }
     },
     {
-      title: "Altrum Medical",
-      logo: "/assets/logo_projeto/Altrum.png",
+      title: "Let's Hike",
+      logo: "/assets/logo_projeto/lets-hike-logo.png",
       links: {
-        instagram: "https://www.instagram.com/altrummedical",
-        linkedin: "https://www.linkedin.com/company/altrum-medical/"
+        website: "https://www.letshike.com.br/",
+        instagram: "https://www.instagram.com/letshike.app",
+        linkedin: "https://www.linkedin.com/company/let´s-hike-app/about/"
       }
     },
     {
@@ -161,6 +152,15 @@ const Projects = () => {
         website: "https://rtmedical.com.br/",
         instagram: "https://www.instagram.com/rtmsystems/",
         linkedin: "https://br.linkedin.com/company/rtmedical"
+      }
+    },
+    {
+      title: "SANAPP",
+      logo: "/assets/logo_projeto/Sanapp.png",
+      links: {
+        website: "https://geosanapp.com.br/",
+        instagram: "https://www.instagram.com/",
+        linkedin: "https://www.linkedin.com/company/sanapp-gestão-inteligente-de-ativos-de-saneamento/"
       }
     }
   ];
