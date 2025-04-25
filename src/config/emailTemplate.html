@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Mensagem - PII</title>
+</head>
+<body>
+    <div style="font-family: system-ui, sans-serif, Arial; font-size: 14px; max-width: 600px; margin: 0 auto;">
+        <!-- Cabeçalho -->
+        <div style="background-color: #0066CC; padding: 20px; text-align: center;">
+            <img src="assets/logoPII.png" alt="Logo PII" style="max-width: 150px;">
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div style="padding: 30px; background-color: #ffffff;">
+            <h2 style="color: #0066CC; margin-bottom: 20px;">Nova Mensagem Recebida</h2>
+            
+            <div style="background-color: #f8f9fa; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                <table role="presentation" style="width: 100%;">
+                    <tr>
+                        <td style="vertical-align: top; width: 60px;">
+                            <div style="
+                                width: 50px;
+                                height: 50px;
+                                background-color: #0066CC;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: white;
+                                font-size: 24px;
+                            ">
+                                👤
+                            </div>
+                        </td>
+                        <td style="vertical-align: top; padding-left: 15px;">
+                            <div style="color: #2C3E50; font-size: 18px; font-weight: bold;">
+                                {{from_name}}
+                            </div>
+                            <div style="color: #7F8C8D; font-size: 14px; margin-top: 5px;">
+                                {{from_email}}
+                            </div>
+                            <div style="color: #7F8C8D; font-size: 14px; margin-top: 5px;">
+                                Assunto: {{subject}}
+                            </div>
+                            <div style="
+                                margin-top: 15px;
+                                padding: 15px;
+                                background-color: white;
+                                border-radius: 5px;
+                                border: 1px solid #E9ECEF;
+                            ">
+                                {{message}}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div style="
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        ">
+            <p>Esta mensagem foi enviada através do formulário de contato do PII</p>
+            <p style="margin-top: 10px;">
+                <a href="https://programa-inovacao-pii.vercel.app" 
+                   style="color: white; text-decoration: none; border-bottom: 1px solid white;">
+                    Programa de Incentivo à Inovação
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html> 
