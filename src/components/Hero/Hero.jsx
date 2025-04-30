@@ -200,6 +200,10 @@ const Hero = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleExternalLink = () => {
+    window.open('https://www.pmf.sc.gov.br/'); 
+  };
+
   return (
     <HeroSection>
       <AnimatePresence mode="crossfade">
@@ -251,7 +255,7 @@ const Hero = () => {
         </CTAButton>
         
         <LogoButton
-          onClick={scrollToTop}
+          onClick={handleExternalLink}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}

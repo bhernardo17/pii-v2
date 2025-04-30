@@ -80,10 +80,35 @@ const Copyright = styled.div`
   color: var(--text-secondary);
 `;
 
-const LogoPMF = styled.img`
-  width: 300px;
-  margin-top: 15px;
+const LogoButton = styled(motion.button)`
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 3;
+  
+  &:hover {
+    opacity: 1;
+  }
+  
+  img {
+    height: 80px;
+    width: auto;
+    margin-right: 100px;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+    
+    @media (max-width: 768px) {
+      height: 50px;
+    }
+  }
 `;
+
+const handleExternalLink = () => {
+  window.open('https://www.pmf.sc.gov.br/'); // Substitua pela URL desejada
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -122,6 +147,9 @@ const Footer = () => {
               <FooterLink>
                 <a href="#processo">Processo</a>
               </FooterLink>
+              <FooterLink>
+                <a href="https://redeinovacao.floripa.br/">Rede de Inovação Florianópolis</a>
+              </FooterLink>
             </FooterLinks>
           </FooterColumn>
 
@@ -133,10 +161,16 @@ const Footer = () => {
             <FooterText>
               pii.supcti.pmf@gmail.com
             </FooterText>
-            <LogoPMF 
-              src="/assets/LOGOPMF.png" 
-              alt="Logo Prefeitura Municipal de Florianópolis"
-            />
+            <LogoButton
+              onClick={handleExternalLink}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img src="/assets/LOGOPMF.png" alt="Prefeitura Municipal de Florianópolis" />
+            </LogoButton>
           </FooterColumn>
         </FooterContent>
 

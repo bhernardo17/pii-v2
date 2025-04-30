@@ -19,6 +19,16 @@ const ScrollButton = styled(motion.button)`
   justify-content: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 999;
+  padding: 0;
+
+  svg {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ScrollToTop = () => {
@@ -55,7 +65,7 @@ const ScrollToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          <FaArrowUp />
+          <FaArrowUp style={{ margin: 0, padding: 0 }} />
         </ScrollButton>
       )}
     </AnimatePresence>

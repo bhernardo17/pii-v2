@@ -337,7 +337,7 @@ const Contact = () => {
                 <InfoItem>
                   <FaInstagram />
                   <InfoText>
-                    <h3>Rede Inovação</h3>
+                    <h3>Rede Inovação Florianópolis</h3>
                     <p>
                       <a 
                         href="https://www.instagram.com/rededeinovacaofloripa/?igsh=ZzNlaWEza3VqNHpr#" 

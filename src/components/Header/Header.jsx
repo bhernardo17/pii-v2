@@ -21,7 +21,11 @@ const Nav = styled.nav`
   margin: 0 auto;
 `;
 
-
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
 
 const MenuButton = styled.button`
   display: none;
@@ -42,7 +46,7 @@ const LogoButton = styled.button`
   padding: 0;
   cursor: pointer;
   height: 50px;
-  outline: none; // Adicionando esta linha
+  outline: none;
   
   img {
     height: 100%;
@@ -58,7 +62,7 @@ const LogoButton = styled.button`
   }
 
   &:focus {
-    outline: none; // Adicionando esta linha também
+    outline: none;
   }
 
   transition: transform 0.2s ease;
@@ -103,6 +107,10 @@ const Header = () => {
     });
   };
 
+  const handleExternalLink = () => {
+    window.open('https://redeinovacao.floripa.br/'); // Substitua pela URL desejada
+  };
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -110,14 +118,25 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Nav>
-        <LogoButton 
-          onClick={scrollToTop}
-          as={motion.button}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <img src="/assets/inovacao.png" alt="Prefeitura Municipal de Florianópolis" />
-        </LogoButton>
+        <LogoContainer>
+          <LogoButton 
+            onClick={scrollToTop}
+            as={motion.button}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src="/assets/inovacao.png" alt="Prefeitura Municipal de Florianópolis" />
+          </LogoButton>
+
+          <LogoButton 
+            onClick={handleExternalLink}
+            as={motion.button}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src="/assets/logoRDF.png" alt="Outra Logo" style={{ height: '100px', width: 'auto', marginTop: '-32px' }} />
+          </LogoButton>
+        </LogoContainer>
 
         <MenuButton onClick={toggleMenu}>
           {isOpen ? <FaTimes /> : <FaBars />}
