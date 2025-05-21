@@ -140,12 +140,12 @@ const Proponents = () => {
 
   const companiesData = [
     // Projetos Incentivados (Proponentes)
-    { id: 1, title: "Altrum Medical", logo: "/assets/logo_projeto/Altrum.png", category: "Saúde", website: '', instagram: '', linkedin: '', facebook: '', whatsapp: '' },
-    { id: 2, title: "Robótica de Controle", logo: "/assets/logo_projeto/ControlRobotic.jpeg", category: "TI", website: '', instagram: '', linkedin: '', facebook: '', whatsapp: '' },
-    { id: 3, title: "Vamos caminhar", logo: "/assets/logo_projeto/lets-hike-logo.png", category: "TI", website: '', instagram: '', linkedin: '', facebook: '', whatsapp: '' },
-    { id: 4, title: "Plataforma PAM", logo: "/assets/logo_projeto/PAM.png", category: "Saúde", website: '', instagram: '', linkedin: '', facebook: '', whatsapp: '' },
-    { id: 5, title: "RT Médico", logo: "/assets/logo_projeto/RT_Medical.png", category: "Saúde", website: '', instagram: '', linkedin: '', facebook: '', whatsapp: '' },
-    { id: 6, title: "SANAPP", logo: "/assets/logo_projeto/Sanapp.png", category: "TI", website: '', instagram: '', linkedin: '', facebook: '', whatsapp: '' },
+    { id: 1, title: "Altrum Medical", logo: "/assets/logo_projeto/Altrum.png", category: "Saúde", website: '', instagram: 'https://www.instagram.com/altrummedical', linkedin: 'https://www.linkedin.com/company/altrum-medical/', facebook: '', whatsapp: '' },
+    { id: 2, title: "Robótica de Controle", logo: "/assets/logo_projeto/ControlRobotic.jpeg", category: "TI", website: 'https://www.controlrpa.com.br/', instagram: 'https://www.instagram.com/controlrpa/', linkedin: 'https://www.linkedin.com/company/control-rpa', facebook: '', whatsapp: '' },
+    { id: 3, title: "Vamos caminhar", logo: "/assets/logo_projeto/lets-hike-logo.png", category: "Educação", website: 'https://www.letshike.com.br/', instagram: 'https://www.instagram.com/letshike.app', linkedin: 'https://www.linkedin.com/company/let´s-hike-app/about/', facebook: '', whatsapp: '' },
+    { id: 4, title: "Plataforma PAM", logo: "/assets/logo_projeto/PAM.png", category: "Saúde", website: 'https://plataformapam.com.br', instagram: 'https://www.instagram.com/plataformapam', linkedin: 'https://www.linkedin.com/company/plataforma-pam', facebook: 'https://www.facebook.com/people/Plataforma-PAM/61557389', whatsapp: 'https://api.whatsapp.com/send?phone=5548999149255' },
+    { id: 5, title: "RT Médico", logo: "/assets/logo_projeto/RT_Medical.png", category: "Saúde", website: 'https://rtmedical.com.br/', instagram: 'https://www.instagram.com/rtmsystems/', linkedin: 'https://br.linkedin.com/company/rtmedical', facebook: '', whatsapp: '' },
+    { id: 6, title: "SANAPP", logo: "/assets/logo_projeto/Sanapp.png", category: "TI", website: 'https://geosanapp.com.br/', instagram: 'https://www.instagram.com/', linkedin: 'https://www.linkedin.com/company/sanapp-gestão-inteligente-de-ativos-de-saneamento/', facebook: '', whatsapp: '' },
   ];
 
   const filters = [

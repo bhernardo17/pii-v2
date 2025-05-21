@@ -14,6 +14,7 @@ const Statistics = React.lazy(() => import('./components/Statistics/Statistics')
 const FAQ = React.lazy(() => import('./components/FAQ/FAQ')); // Adicionando import do FAQ
 const Contact = React.lazy(() => import('./components/Contact/Contact'));
 const Footer = React.lazy(() => import('./components/Footer/Footer'));
+const Legislation = React.lazy(() => import('./components/Legislation/Legislation'));
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Participation />
           <Process />
           <Statistics />
+          <Legislation />
           <Proponents />
           <Contact />
           <FAQ />

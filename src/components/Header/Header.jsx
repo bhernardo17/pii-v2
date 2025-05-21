@@ -147,10 +147,11 @@ const Header = () => {
           <MenuItem href="#beneficios">Benefícios</MenuItem>
           <MenuItem href="#participacao">Como Participar</MenuItem>
           <MenuItem href="#processo">Processo</MenuItem>
-          <MenuItem href="#projetos">Projetos</MenuItem> {/* Adicionar esta linha */}
+          <MenuItem href="#legislacao">Legislação</MenuItem>
+          <MenuItem href="#projetos">Projetos</MenuItem>
           <MenuItem href="#estatisticas">Estatísticas</MenuItem>
           <MenuItem href="#contato">Contato</MenuItem>
-      </MenuItems>
+        </MenuItems>
       </Nav>
     </HeaderContainer>
   );
