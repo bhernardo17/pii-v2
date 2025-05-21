@@ -165,16 +165,18 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    '/assets/foto1.png',
-    '/assets/foto2.jpg',
-    '/assets/foto3.jpg',
-    '/assets/foto4.jpg',
-    '/assets/foto5.jpg',
-    '/assets/foto6.jpg',
-    '/assets/foto7.png',
-    '/assets/foto8.jpg',
-    '/assets/foto9.jpg',
-    '/assets/foto10.png'
+    '/assets/1.JPG',
+    '/assets/2.JPG',
+    '/assets/3.JPG',
+    '/assets/4.JPG',
+    '/assets/5.jpg',
+    '/assets/6.jpg',
+    '/assets/7.jpg',
+    '/assets/8.jpg',
+    '/assets/9.jpg',
+    '/assets/10.jpg',
+    '/assets/11.jpg',
+    '/assets/12.jpg'
   ];
 
   useEffect(() => {

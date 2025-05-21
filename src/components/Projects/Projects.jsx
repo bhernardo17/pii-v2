@@ -73,6 +73,8 @@ const SocialLink = styled.a`
   color: var(--primary);
   font-size: 1.5rem;
   transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     color: var(--primary-dark);
@@ -112,7 +114,7 @@ const Projects = () => {
       title: "Altrum Medical",
       logo: "/assets/logo_projeto/Altrum.png",
       links: {
-        instagram: "https://www.instagram.com/altrummedical",
+        instagram: "https://www.instagram.com/altrummedical/",
         linkedin: "https://www.linkedin.com/company/altrum-medical/"
       }
     },
@@ -121,7 +123,7 @@ const Projects = () => {
       logo: "/assets/logo_projeto/ControlRobotic.jpeg",
       links: {
         website: "https://www.controlrpa.com.br/",
-        linkedin: "https://www.linkedin.com/company/control-rpa",
+        linkedin: "https://www.linkedin.com/company/control-rpa/",
         instagram: "https://www.instagram.com/controlrpa/"
       }
     },
@@ -130,18 +132,18 @@ const Projects = () => {
       logo: "/assets/logo_projeto/lets-hike-logo.png",
       links: {
         website: "https://www.letshike.com.br/",
-        instagram: "https://www.instagram.com/letshike.app",
-        linkedin: "https://www.linkedin.com/company/let´s-hike-app/about/"
+        instagram: "https://www.instagram.com/letshike.app/",
+        linkedin: "https://www.linkedin.com/company/let´s-hike-app/"
       }
     },
     {
       title: "Plataforma PAM",
       logo: "/assets/logo_projeto/PAM.png",
       links: {
-        website: "https://plataformapam.com.br",
-        instagram: "https://www.instagram.com/plataformapam",
+        website: "https://plataformapam.com.br/",
+        instagram: "https://www.instagram.com/plataformapam/",
         facebook: "https://www.facebook.com/people/Plataforma-PAM/61557389050144/",
-        linkedin: "https://www.linkedin.com/company/plataforma-pam",
+        linkedin: "https://www.linkedin.com/company/plataforma-pam/",
         whatsapp: "https://api.whatsapp.com/send?phone=5548999149255"
       }
     },
@@ -151,7 +153,7 @@ const Projects = () => {
       links: {
         website: "https://rtmedical.com.br/",
         instagram: "https://www.instagram.com/rtmsystems/",
-        linkedin: "https://br.linkedin.com/company/rtmedical"
+        linkedin: "https://br.linkedin.com/company/rtmedical/"
       }
     },
     {
@@ -159,7 +161,7 @@ const Projects = () => {
       logo: "/assets/logo_projeto/Sanapp.png",
       links: {
         website: "https://geosanapp.com.br/",
-        instagram: "https://www.instagram.com/",
+        instagram: "https://www.instagram.com/sanapp/",
         linkedin: "https://www.linkedin.com/company/sanapp-gestão-inteligente-de-ativos-de-saneamento/"
       }
     }
@@ -179,69 +181,92 @@ const Projects = () => {
           </Title>
           
           <ProjectsGrid>
-            {projectsData.map((project, index) => (
-              <ProjectCard
-                key={index}
-                variants={cardVariants}
-              >
-                <LogoWrapper>
-                  <img src={project.logo} alt={`Logo ${project.title}`} />
-                </LogoWrapper>
-                <ProjectTitle>{project.title}</ProjectTitle>
-                <SocialLinks>
-                  {project.links.website && (
-                    <SocialLink 
-                      href={project.links.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label="Website"
-                    >
-                      <FaGlobe />
-                    </SocialLink>
-                  )}
-                  {project.links.instagram && (
-                    <SocialLink 
-                      href={project.links.instagram} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label="Instagram"
-                    >
-                      <FaInstagram />
-                    </SocialLink>
-                  )}
-                  {project.links.linkedin && (
-                    <SocialLink 
-                      href={project.links.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label="LinkedIn"
-                    >
-                      <FaLinkedin />
-                    </SocialLink>
-                  )}
-                  {project.links.facebook && (
-                    <SocialLink 
-                      href={project.links.facebook} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label="Facebook"
-                    >
-                      <FaFacebook />
-                    </SocialLink>
-                  )}
-                  {project.links.whatsapp && (
-                    <SocialLink 
-                      href={project.links.whatsapp} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label="WhatsApp"
-                    >
-                      <FaWhatsapp />
-                    </SocialLink>
-                  )}
-                </SocialLinks>
-              </ProjectCard>
-            ))}
+            {projectsData.map((project, index) => {
+              console.log(`Projeto: ${project.title}, Links:`, project.links);
+              return (
+                <ProjectCard
+                  key={index}
+                  variants={cardVariants}
+                >
+                  <LogoWrapper>
+                    <img src={project.logo} alt={`Logo ${project.title}`} />
+                  </LogoWrapper>
+                  <ProjectTitle>{project.title}</ProjectTitle>
+                  <SocialLinks>
+                    {project.links.website && (
+                      <SocialLink 
+                        href={project.links.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Website"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.links.website, '_blank');
+                        }}
+                      >
+                        <FaGlobe />
+                      </SocialLink>
+                    )}
+                    {project.links.instagram && (
+                      <SocialLink 
+                        href={project.links.instagram} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.links.instagram, '_blank');
+                        }}
+                      >
+                        <FaInstagram />
+                      </SocialLink>
+                    )}
+                    {project.links.linkedin && (
+                      <SocialLink 
+                        href={project.links.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.links.linkedin, '_blank');
+                        }}
+                      >
+                        <FaLinkedin />
+                      </SocialLink>
+                    )}
+                    {project.links.facebook && (
+                      <SocialLink 
+                        href={project.links.facebook} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.links.facebook, '_blank');
+                        }}
+                      >
+                        <FaFacebook />
+                      </SocialLink>
+                    )}
+                    {project.links.whatsapp && (
+                      <SocialLink 
+                        href={project.links.whatsapp} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="WhatsApp"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.links.whatsapp, '_blank');
+                        }}
+                      >
+                        <FaWhatsapp />
+                      </SocialLink>
+                    )}
+                  </SocialLinks>
+                </ProjectCard>
+              );
+            })}
           </ProjectsGrid>
         </motion.div>
       </Container>
