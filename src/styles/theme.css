@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* src/styles/theme.css */
 :root {
     --primary: #0066CC;
@@ -27,4 +28,35 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+=======
+/* src/styles/theme.css */
+:root {
+    --primary: #0066CC;
+    --secondary: #2C3E50;
+    --accent: #3498DB;
+    --text-primary: #2C3E50;
+    --text-secondary: #7F8C8D;
+    --text-light: #FFFFFF;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F9FA;
+    --bg-accent: #E9ECEF;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+>>>>>>> Nicodev
   }

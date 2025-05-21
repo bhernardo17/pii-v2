@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Loading from './components/common/Loading';
 import ScrollToTop from './components/common/ScrollToTop';
-import Projects from './components/Projects/Projects';
+import Proponents from './components/Proponents/Proponents';
 
 // Lazy loading para componentes menos críticos
 const About = React.lazy(() => import('./components/About/About'));
@@ -27,7 +27,7 @@ function App() {
           <Participation />
           <Process />
           <Statistics />
-          <Projects />
+          <Proponents />
           <Contact />
           <FAQ />
         </Suspense>
