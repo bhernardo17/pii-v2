@@ -16,6 +16,7 @@ const FAQ = React.lazy(() => import('./components/FAQ/FAQ')); // Adicionando imp
 const Contact = React.lazy(() => import('./components/Contact/Contact'));
 const Footer = React.lazy(() => import('./components/Footer/Footer'));
 const Legislation = React.lazy(() => import('./components/Legislation/Legislation'));
+const Credentials = React.lazy(() => import('./components/Credentials/Credentials'));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <HowToSubmit /> 
           <Process />
           <Statistics />
+          <Credentials />
           <Legislation />
           <Proponents />
           <Contact />
