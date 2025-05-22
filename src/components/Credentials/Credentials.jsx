@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { FaBuilding, FaGlobe } from 'react-icons/fa';
+import { FaBuilding, FaGlobe, FaPhone, FaEnvelope, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const CredentialsSection = styled.section`
   padding: 100px 0;
@@ -116,32 +116,76 @@ const ActionButton = styled(motion.a)`
   }
 `;
 
+const ContactLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 15px;
+  width: 100%;
+`;
+
+const ContactItem = styled.div`
+  color: var(--primary);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+`;
+
 const Credentials = () => {
   const apisData = [
     {
       title: "API Inova+Saúde",
       link: "https://www.inovasaudesc.com.br/",
-      description: "O API Inova+Saúde é gerenciado pela Associação Catarinense de Medicina (ACM). Contato: https://www.inovasaudesc.com.br/contato"
+      description: "O API Inova+Saúde é gerenciado pela Associação Catarinense de Medicina (ACM).",
+      contacts: [
+        { type: 'website', icon: <FaGlobe />, label: 'Website' }
+      ]
     },
     {
       title: "API ACATE",
       link: "https://sc.acate.com.br/api",
-      description: "O API ACATE é gerenciado pela Associação Catarinense de Tecnologia (ACATE). Contato: +55 (48) 2107-2700, ramal 2770 ou api.acate@acate.com.br"
+      description: "O API ACATE é gerenciado pela Associação Catarinense de Tecnologia (ACATE).",
+      contacts: [
+        { type: 'phone', icon: <FaPhone />, label: '+55 (48) 2107-2700' },
+        { type: 'email', icon: <FaEnvelope />, label: 'api.acate@acate.com.br' }
+      ]
     },
     {
       title: "API de Inovação e Economia Criativa",
       link: "https://api.cdltech.com.br/",
-      description: "O API de Inovação e Economia Criativa é gerenciado pela Câmara de Dirigentes Lojistas de Florianópolis (CDL) Contato: +55 (48) 9915917 ou api@cdlflorianopolis.org.br ou https://www.instagram.com/cdlinovacaoetecnologia/"
+      description: "O API de Inovação e Economia Criativa é gerenciado pela Câmara de Dirigentes Lojistas de Florianópolis (CDL)",
+      contacts: [
+        { type: 'phone', icon: <FaPhone />, label: '+55 (48) 9915917' },
+        { type: 'email', icon: <FaEnvelope />, label: 'api@cdlflorianopolis.org.br' },
+        { type: 'instagram', icon: <FaInstagram />, label: '@cdlinovacaoetecnologia' }
+      ]
     },
     {
       title: "API Câmara Brasil-Portugal",
       link: "https://brasilportugalsc.org.br/",
-      description: "O API Câmara Brasil-Portugal é gerenciado pela Câmara de Comércio Brasil-Portugal de Florianópolis. Contato: contato@brasilportugalsc.org.br ou +55 (48) 98809-4477"
+      description: "O API Câmara Brasil-Portugal é gerenciado pela Câmara de Comércio Brasil-Portugal de Florianópolis.",
+      contacts: [
+        { type: 'email', icon: <FaEnvelope />, label: 'contato@brasilportugalsc.org.br' },
+        { type: 'whatsapp', icon: <FaWhatsapp />, label: '+55 (48) 98809-4477' }
+      ]
     },
     {
       title: "API Inovar ACIF",
       link: "https://api.acif.org.br/",
-      description: "O API Inovar ACIF é gerenciado pela Associação Comercial e Industrial de Florianópolis (ACIF). Contato:  +55 (48) 999116852 ou analista.programas@acif.org.br​. ​"
+      description: "O API Inovar ACIF é gerenciado pela Associação Comercial e Industrial de Florianópolis (ACIF).",
+      contacts: [
+        { type: 'phone', icon: <FaPhone />, label: '+55 (48) 999116852' },
+        { type: 'email', icon: <FaEnvelope />, label: 'analista.programas@acif.org.br' }
+      ]
     }
   ];
 
@@ -193,6 +237,14 @@ const Credentials = () => {
                   <APIDescription>
                     {api.description}
                   </APIDescription>
+                  <ContactLinks>
+                    {api.contacts.map((contact, idx) => (
+                      <ContactItem key={idx}>
+                        {contact.icon}
+                        {contact.label}
+                      </ContactItem>
+                    ))}
+                  </ContactLinks>
                 </div>
                 <ActionButton
                   href={api.link}
