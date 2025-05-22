@@ -298,38 +298,52 @@ const Process = () => {
     {
       icon: <FaUserPlus />,
       title: "1. Vinculação a um API",
-      description: "Vincule-se a um Arranjo Promotor de Inovação (API) credenciado pelo município.",
+      description: "A submissão das propostas deve ser realizada por meio de um API devidamente credenciado pelo município. Caso o proponente ainda não possua vínculo com um API, será necessário selecionar a entidade mais adequada para fornecer suporte ao desenvolvimento do projeto e formalizar sua vinculação.",
       position: "left",
-      button: { text: "APIs credenciados", href: "#" }
+      button: { text: "Conheça os APIs credenciados", href: "#" }
     },
     {
       icon: <FaFileAlt />,
-      title: "2. Pré-submissão",
-      description: "O API realizará uma análise preliminar e fornecerá suporte para qualificar o projeto.",
+      title: "2. Pré-submissão, Análise e Qualificação da Proposta",
+      description: "O API receberá a proposta inicial, realizará uma análise preliminar detalhada e fornecerá todo o suporte necessário ao proponente, com o objetivo de qualificar o projeto conforme os requisitos estabelecidos.",
       position: "right"
     },
     {
       icon: <FaFileAlt />,
       title: "3. Submissão da Proposta",
-      description: "O API submete a proposta de forma eletrônica, garantindo rastreabilidade do processo.",
+      description: "A submissão da proposta é efetuada pelo API de forma eletrônica, garantindo a integração eficiente e a rastreabilidade do processo.",
       position: "left"
     },
     {
       icon: <FaUsers />,
       title: "4. Análise e Aprovação",
-      description: "Avaliação em duas fases: Comissão de Seleção e Comitê Gestor.",
+      description: (
+        <>
+          <p>Os projetos são avaliados em duas fases distintas. A primeira fase é conduzida pela Comissão de Seleção, composta por 16 (dezesseis) membros nomeados por meio de Portaria. A segunda fase de avaliação é realizada pelo Comitê Gestor, formado por 6 (seis) membros, sendo 3 (três) Secretários Municipais e 3 (três) representantes não pertencentes ao Poder Público Municipal, eleitos pela plenária do Conselho Municipal de Inovação.</p>
+          <p>A Comissão de Seleção avaliará as propostas com notas de <strong>0 a 5</strong> para cada um dos seguintes quesitos (Cap. III, Seção I, § 7):</p>
+          <ol type="a">
+            <li><strong>Nível de inovação</strong> do projeto;</li>
+            <li><strong>Clareza na definição do objeto e da finalidade</strong> do projeto;</li>
+            <li><strong>Validação mercadológica, sustentação financeira e escalabilidade</strong>;</li>
+            <li><strong>Aplicabilidade do cronograma físico/financeiro</strong> com o escopo apresentado;</li>
+            <li><strong>Qualificação da equipe técnica</strong> em relação ao projeto;</li>
+            <li><strong>Relevância para o desenvolvimento econômico</strong> do município;</li>
+            <li><strong>Retorno à municipalidade</strong>.</li>
+          </ol>
+        </>
+      ),
       position: "right"
     },
     {
       icon: <FaHandshake />,
-      title: "5. Autorização",
-      description: "Recebimento da Carta de Autorização e assinatura do Contrato de Parceria.",
+      title: "5. Autorização para Captação de Recursos",
+      description: "Após a aprovação nas duas etapas, os projetos recebem uma Carta de Autorização para Captação de Recursos, e as partes envolvidas firmam um Contrato de Parceria. Ambos os documentos possuem validade de dois anos.",
       position: "left"
     },
     {
       icon: <FaMoneyBillWave />,
-      title: "6. Captação de Recursos",
-      description: "Início da captação junto aos contribuintes incentivadores.",
+      title: "6. Captação do Incentivo",
+      description: "O responsável pelo projeto, portando a Carta de Autorização e o Contrato de Parceria, poderá iniciar a captação de recursos financeiros junto aos contribuintes incentivadores, dentro do prazo de vigência do contrato.",
       position: "right"
     }
   ];
