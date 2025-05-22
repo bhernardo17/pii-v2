@@ -6,6 +6,7 @@ import ScrollToTop from './components/common/ScrollToTop';
 import Proponents from './components/Proponents/Proponents';
 import HowToSubmit from './components/Process/HowToSubmit';
 
+
 // Lazy loading para componentes menos críticos
 const About = React.lazy(() => import('./components/About/About'));
 const Benefits = React.lazy(() => import('./components/Benefits/Benefits'));

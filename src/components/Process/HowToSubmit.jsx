@@ -72,7 +72,7 @@ const SectionTitle = styled.h3`
 
 const StepDescription = styled.p`
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.6;
   margin-bottom: 1rem;
 
@@ -89,7 +89,7 @@ const StyledList = styled.ul`
 
 const StyledListItem = styled.li`
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.6;
   margin-bottom: 0.5rem;
   position: relative;
@@ -162,7 +162,7 @@ const RuleList = styled.ul`
 
 const RuleListItem = styled.li`
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.6;
   margin-bottom: 0.5rem;
   position: relative;
@@ -194,7 +194,7 @@ const FinancialAttentionTitle = styled(StepDescription)`
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
-  color: var(--primary); /* Cor para o título clicável */
+  color: var(--primary); 
 
   svg {
     margin-left: 0.5rem;
@@ -239,7 +239,7 @@ const FinancialList = styled.ul`
 
 const FinancialListItem = styled.li`
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.6;
   margin-bottom: 0.5rem;
 
@@ -306,9 +306,7 @@ const HowToSubmit = () => {
                 A apresentação do projeto deve ser realizada por intermédio de um Arranjo Promotor de Inovação (API) devidamente credenciado junto ao município.
               </StepDescription>
               <ApiButton href="#">APIs credenciados</ApiButton>
-              <StepDescription>
-              (levar para uma página com a lista dos APIs e um link para a página de cada um deles)
-              </StepDescription>
+              
 
             </SectionCard>
 

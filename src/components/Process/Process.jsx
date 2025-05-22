@@ -251,6 +251,24 @@ const CriteriaGrid = styled.div`
   }
 `;
 
+const ApiButton = styled.a`
+  display: inline-block;
+  background-color: #0066cc; /* Usando a cor do botão que você ajustou em HowToSubmit.jsx */
+  color: rgb(255, 255, 255); /* Cor do texto do botão */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgb(3, 76, 150);
+    color: rgba(255, 255, 255, 0.97);
+  }
+`;
+
 const Process = () => {
   const containerVariants = {
     hidden: {},
@@ -281,7 +299,8 @@ const Process = () => {
       icon: <FaUserPlus />,
       title: "1. Vinculação a um API",
       description: "Vincule-se a um Arranjo Promotor de Inovação (API) credenciado pelo município.",
-      position: "left"
+      position: "left",
+      button: { text: "APIs credenciados", href: "#" }
     },
     {
       icon: <FaFileAlt />,
@@ -379,6 +398,11 @@ const Process = () => {
                   </IconCircle>
                   <StepTitle>{step.title}</StepTitle>
                   <StepDescription>{step.description}</StepDescription>
+                  {step.button && (
+                    <ApiButton href={step.button.href}>
+                      {step.button.text}
+                    </ApiButton>
+                  )}
                 </TimelineContent>
               </TimelineItem>
             ))}
