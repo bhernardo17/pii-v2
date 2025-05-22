@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero';
 import Loading from './components/common/Loading';
 import ScrollToTop from './components/common/ScrollToTop';
 import Proponents from './components/Proponents/Proponents';
+import HowToSubmit from './components/Process/HowToSubmit';
 
 // Lazy loading para componentes menos críticos
 const About = React.lazy(() => import('./components/About/About'));
@@ -26,6 +27,7 @@ function App() {
           <About />
           <Benefits />
           <Participation />
+          <HowToSubmit /> 
           <Process />
           <Statistics />
           <Legislation />

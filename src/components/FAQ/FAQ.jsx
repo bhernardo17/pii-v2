@@ -94,7 +94,7 @@ const FAQ = () => {
     },
     {
       question: "Como escolher um API para se vincular?",
-      answer: "A escolha do API deve considerar a área de atuação do seu projeto. Cada API tem expertise em setores específicos: saúde (API Inova+Saúde), tecnologia (API ACATE), economia criativa (API CDL) e comércio/indústria (API ACIF)."
+      answer: "A escolha do API deve considerar a área de atuação do seu projeto. Cada API tem expertise em setores específicos: saúde (API Inova+Saúde), tecnologia (API ACATE), economia criativa (API CDL), Internacionalização (API Câmara Brasil-Portugal) e comércio/indústria (API ACIF)."
     },
     {
       question: "O que acontece após a aprovação do projeto?",
