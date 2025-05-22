@@ -305,7 +305,7 @@ const HowToSubmit = () => {
               <StepDescription>
                 A apresentação do projeto deve ser realizada por intermédio de um Arranjo Promotor de Inovação (API) devidamente credenciado junto ao município.
               </StepDescription>
-              <ApiButton href="#">APIs credenciados</ApiButton>
+              <ApiButton href="#apis-credenciados">APIs credenciados</ApiButton>
               
 
             </SectionCard>

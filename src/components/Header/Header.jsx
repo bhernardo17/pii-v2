@@ -148,7 +148,7 @@ const Header = () => {
           <MenuItem href="#participacao">Como Participar</MenuItem>
           <MenuItem href="#processo">Processo</MenuItem>
           <MenuItem href="#legislacao">Legislação</MenuItem>
-          <MenuItem href="#apis-credenciados">APIs Credenciados</MenuItem>
+          <MenuItem href="#apis-credenciados">APIs</MenuItem>
           <MenuItem href="#projetos">Projetos</MenuItem>
           <MenuItem href="#estatisticas">Estatísticas</MenuItem>
           <MenuItem href="#contato">Contato</MenuItem>

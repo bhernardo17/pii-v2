@@ -300,7 +300,7 @@ const Process = () => {
       title: "1. Vinculação a um API",
       description: "A submissão das propostas deve ser realizada por meio de um API devidamente credenciado pelo município. Caso o proponente ainda não possua vínculo com um API, será necessário selecionar a entidade mais adequada para fornecer suporte ao desenvolvimento do projeto e formalizar sua vinculação.",
       position: "left",
-      button: { text: "Conheça os APIs credenciados", href: "#" }
+      button: { text: "Conheça os APIs credenciados", href: "#apis-credenciados" }
     },
     {
       icon: <FaFileAlt />,
